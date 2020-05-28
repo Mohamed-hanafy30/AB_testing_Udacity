@@ -14458,9 +14458,10 @@ $$ H_{0} : p_{old} - p_{new} \geq 0$$$$ H_{A} : p_{old} - p_{new} &lt; 0$$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>The proportion of the p_diffs that are greater than the actual difference observed in ab_data.csv is called the p-value</strong></p>
-<p><strong>A p-value is the probability of observing your statistic if the null hypothesis is true.</strong></p>
-<p><strong>The null hypothesis was that the difference in means would be equal or less than 0, and the alternative was the difference would be greater than 0. However, the difference is less than zero, and the p-value is very large. We do not have evidence to reject the null.</strong></p>
+<p>what you just computed in part j is called in scientific studies as <strong>p-value</strong></p>
+<p><strong>In statistical hypothesis testing, the p-value or probability value is the probability of obtaining test results at least as extreme as the results actually observed during the test, assuming that the null hypothesis is correct</strong> <code>this is wikipedia defination</code></p>
+<p>and in our case null hypothesis is there is no difference between old and new pages while alternative hypothesis is there is a significat difference between both old and new pages</p>
+<p><strong>Finally since the p-value of our test is very large about 0.95 so we fail to reject null hyptohesis and there is no signficant difference between old and new page</strong></p>
 
 </div>
 </div>
@@ -14552,16 +14553,13 @@ $$ H_{0} : p_{old} - p_{new} \geq 0$$$$ H_{A} : p_{old} - p_{new} &lt; 0$$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In statistics, the standard score is the signed number of standard deviations by which the value of an observation or data point is above the mean value of what is being observed or measured (wikipedia)</p>
-<p>Before this test began, we would have picked a significance level. Let's just say it's 95%. Since this is a test for the difference, it's a two-tail test so a z-score past -1.96 or 1.96 will be significant. (knowledgetack)</p>
-<p>The conversion rate of the new landing page is only 1.3109 standard deviations from the conversion rate of the old landing page. This is less than the critical value of 1.96. We cannot reject the hull hypothesis that the difference between the two conversion rates is no different from zero.</p>
-<p>Also, the p-value is 0.9050. The p-value was calculated where the null hypothesis was that the new page would convert more than the old page, and the alternative was the old page converted more than or equal to the new page.</p>
-<p><strong>To sum up</strong></p>
-<ul>
-<li><strong>A z-score represents how many standard deviations away our data point is from the mean and positive z-score means that our data points are above mean in the normal curve</strong></li>
-<li><strong>p-value of 0.9050 is very close to the p-value we computed earlier in part j.</strong></li>
-<li><strong>With this computation, we can confidently say we fail to reject null hypothesis due to very high p- value</strong></li>
-</ul>
+<p>Z score is a number which represent how many standard deviation we are away from the mean (in both sides the positive and negative) so the higher z score the greater the distance from the mean</p>
+<p>since this is a two tailed test with confidence level 95% so we choop 2.5% from each tail so at 97.5% the z score is <strong>1.96</strong>
+this is called the critical z score value which mean any z score less than it lead to reject null hypthoesis so in our case we have a z score of conversion rate of the new landing page is only 1.3109 so <strong>we failed to reject null hypothesis after doing A/B test this result is same as we obtained from part 1 but in another way</strong></p>
+<p>in addition to, we have a very large p-value which strengthen our decision</p>
+<p><strong>HINT:</strong>
+if we reject null hypothesis in this case and implement new page this called TYPE I error</p>
+<p><strong>TYPE I error</strong> is a false rejection of the null hypothesis. This occurs when the null hypothesis is true in reality, but the null hypothesis is rejected, having a p-value that is less than the significance level (often 0.05). The probability of a type I error is the significance level (again, often 0.05), and is the relative frequency of occurrence of obtaining a p-value that is less than the significance level, assuming the null hypothesis is true.</p>
 
 </div>
 </div>
@@ -14989,10 +14987,9 @@ $$ H_{0}: p_{old} - p_{new} \neq 0$$</p>
 </ul>
 <p><strong>Probability based approach:</strong></p>
 <ul>
-<li>Given that an individual was in the treatment group, the probability they converted is 0.118807</li>
-<li>Given that an individual was in the control group, the probability they converted is 0.120386</li>
-<li>We find that old page does better, but by a very tiny margin.</li>
-<li>Change aversion, test span durations and other potentially influencing factors are not accounted for. So, we cannot state with certainty that one page leads to more conversions. This is even more important due to almost similar perforamnce of both pages.</li>
+<li>p(be converted | treatment group) is 0.118</li>
+<li>p(be converted | control group) is 0.12</li>
+<li>there is very slightly difference between both groups and proportion to be converted to new page design this is an evidence for there is a difference between statastical signficance and practical signficance here we have statastical signficance as both numbers are different while there is no practical signficance as this difference may be due to novelty issues or due to randomness</li>
 </ul>
 <p><strong>A/B test:</strong></p>
 <ul>
@@ -15003,19 +15000,14 @@ $$ H_{0}: p_{old} - p_{new} \neq 0$$</p>
 </ul>
 <p><strong>Regression Approach:</strong></p>
 <ul>
-<li>We looked at exploring two possible outcomes. Whether new page is better or not.</li>
-<li>With logistic regression results, we again encountered same z-score as well as p-value of 0.190</li>
-<li>Adding geographic location of the users, we tried to find if any specific country had an impact on conversion the result       gave suggested that the countries have no impact on the conversion rate due to high p-value in second regression model.</li>
+<li>in our regression analysis we have two outcomes which are implement new page design or not implement it or simply a true    false output and in this case we have to use logistic regression which is called <strong>Binary regression</strong>.</li>
+<li>After we run our regression analysis we found that p-value is 0.19 which is higher than p-value we define before run      regression which is 0.05 so we can't reject null hypothesis</li>
+<li>finally i will run regression after adding country in our consideration to figure out if diversity in countries affect our results and i found that p-values for <strong>UK and Canda</strong> are 0.456 and 0.19 respectively which also greater than critical p-values to be said country variable affect our results and decision.</li>
 </ul>
-<p><strong>HINT:</strong></p>
-<p>In Part II, the p-value was calculated where the null hypothesis was that the new page would convert more than the old page, and the alternative was the old page converted more than or equal to the new page.</p>
-<p>In Part III, we used variables, and used a linear model to determine the p-value. The null hypothesis was that the difference between the pages is equal to 0, and the alternative hypothesis was the difference between the pages is greater or less than 0.
- so this make difference in value of p-value but both tend to same conclusion there is no practical signficance between old and new page</p>
 <p><strong>Consideration:</strong></p>
 <ul>
-<li>These inferences are strictly based on data on hand.</li>
-<li>This analysis acknowledges its limitations due to factors not included in the data. </li>
-<li>We also looked at the duration of the experiment (21 days).This is a relatively short period of time to run the A/B test.</li>
+<li>These inferences  and decision based on data we have so if we have another dataset for longer time this may affect our test and hypothesis .</li>
+<li>This is a relatively short period of time to run the A/B test which is 21 days.</li>
 </ul>
 <p><strong>References</strong></p>
 <p>Udacity workspace and jupyter notebook template for AB testing
