@@ -14458,11 +14458,9 @@ $$ H_{0} : p_{old} - p_{new} \geq 0$$$$ H_{A} : p_{old} - p_{new} &lt; 0$$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>What we computed in part j. is called p-value in scientific studies.</strong></li>
-<li><strong>p-value is the probability of observing your statistic (or one more extreme in favor of the alternative) if the null hypothesis is true.</strong></li>
-<li><strong>In our case the p-value is so big that we can confidently say that we fail to reject null hypothesis</strong></li>
-</ul>
+<p><strong>The proportion of the p_diffs that are greater than the actual difference observed in ab_data.csv is called the p-value</strong></p>
+<p><strong>A p-value is the probability of observing your statistic if the null hypothesis is true.</strong></p>
+<p><strong>The null hypothesis was that the difference in means would be equal or less than 0, and the alternative was the difference would be greater than 0. However, the difference is less than zero, and the p-value is very large. We do not have evidence to reject the null.</strong></p>
 
 </div>
 </div>
@@ -14554,6 +14552,11 @@ $$ H_{0} : p_{old} - p_{new} \geq 0$$$$ H_{A} : p_{old} - p_{new} &lt; 0$$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>In statistics, the standard score is the signed number of standard deviations by which the value of an observation or data point is above the mean value of what is being observed or measured (wikipedia)</p>
+<p>Before this test began, we would have picked a significance level. Let's just say it's 95%. Since this is a test for the difference, it's a two-tail test so a z-score past -1.96 or 1.96 will be significant. (knowledgetack)</p>
+<p>The conversion rate of the new landing page is only 1.3109 standard deviations from the conversion rate of the old landing page. This is less than the critical value of 1.96. We cannot reject the hull hypothesis that the difference between the two conversion rates is no different from zero.</p>
+<p>Also, the p-value is 0.9050. The p-value was calculated where the null hypothesis was that the new page would convert more than the old page, and the alternative was the old page converted more than or equal to the new page.</p>
+<p><strong>To sum up</strong></p>
 <ul>
 <li><strong>A z-score represents how many standard deviations away our data point is from the mean and positive z-score means that our data points are above mean in the normal curve</strong></li>
 <li><strong>p-value of 0.9050 is very close to the p-value we computed earlier in part j.</strong></li>
