@@ -14573,34 +14573,50 @@ $$ H_{0}: p_{old} - p_{new} \neq 0$$</p>
 </ul>
 <p><strong>Probability based approach:</strong></p>
 <ul>
-<li>We found that probability of an individual receiving the new page is 0.5001</li>
-<li>Meaning, there is almost the same chance that an individual received the old page</li>
+<li>Given that an individual was in the treatment group, the probability they converted is 0.118807</li>
+<li>Given that an individual was in the control group, the probability they converted is 0.120386</li>
+<li>We find that old page does better, but by a very tiny margin.</li>
+<li>Change aversion, test span durations and other potentially influencing factors are not accounted for. So, we cannot state with certainty that one page leads to more conversions. This is even more important due to almost similar perforamnce of both pages.</li>
 </ul>
 <p><strong>A/B test:</strong></p>
 <ul>
-<li>In A/B test we set up our hypothesis to test if new page results in better conversion or not</li>
 <li>We simulated our user groups with respect to conversions</li>
 <li>We found the p_value to be 0.8879</li>
 <li>With such a p-value, we failed to reject null hypothesis</li>
-<li>By using the built-in <code>stats.proportions_ztest</code> we computed z-score and p-value which confirmed our earlier p-value and failure to reject null hypothesis</li>
+<li>We find that the z-score of 1.3109 is less than the critical value of 1.6448. So, we accept the null hypothesis.</li>
+<li>As regards the conversion rates of the old and new pages, we find that old pages are only minutely better than new pages.</li>
+<li>These values agree with the findings in parts j. and k.</li>
 </ul>
 <p><strong>Regression Approach:</strong></p>
 <ul>
 <li>We looked at exploring two possible outcomes. Whether new page is better or not.</li>
 <li>With logistic regression results, we again encountered same z-score as well as p-value of 0.190, corresponding two-tailed case</li>
-<li>By further adding geographic location of the users, we tried to find if any specific country had an impact on conversion</li>
+<li>Adding geographic location of the users, we tried to find if any specific country had an impact on conversion</li>
 <li>The result gave a similar outlook and suggested that the countries have no impact on the conversion rate.</li>
 </ul>
 <p><strong>Consideration:</strong></p>
 <ul>
-<li>We also looked at the duration of the experiment (21 days). </li>
-<li>This is a relatively short period of time to run the A/B test.</li>
-<li>Due to Change aversion effect, a group of users may give an unfair advantage to the older page</li>
-<li>Similarly, due to Novelty effect, users may give an unfair advantage to the newer page</li>
+<li>These inferences are strictly based on data on hand. This analysis acknowledges its limitations due to factors not included in the data. </li>
+<li>We also looked at the duration of the experiment (21 days).This is a relatively short period of time to run the A/B test.</li>
 </ul>
+<p><strong>References</strong></p>
+<p><a href="https://github.com/ishita-joshi/Analyze-A-B-Test-Results/blob/dc4d13cd935dd0447622f9c3ce6dcddda43d06bf/IshitaJ_Analyze_ab_test_results.ipynb">https://github.com/ishita-joshi/Analyze-A-B-Test-Results/blob/dc4d13cd935dd0447622f9c3ce6dcddda43d06bf/IshitaJ_Analyze_ab_test_results.ipynb</a></p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
